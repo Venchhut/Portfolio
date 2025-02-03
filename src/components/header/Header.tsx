@@ -1,5 +1,6 @@
 import {
   IconAddressBook,
+  IconBriefcase,
   IconCode,
   IconHome,
   IconPresentation,
@@ -56,6 +57,12 @@ const Header = () => {
             <a href="#projects">
               <IconPresentation className="header-icon" />
               <p>Projects</p>
+            </a>
+          </li>
+          <li className="header-item">
+            <a href="#experiences">
+              <IconBriefcase className="header-icon" />
+              <p>Experiences</p>
             </a>
           </li>
           <li className="header-item">
