@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Root Variables */
+:root {
+  --background-color: hsl(0, 2%, 8%);
+  --background-alt: hsl(0, 0%, 12%);
+  --text-color: hsl(0, 0%, 98%);
+  --grey-color: hsl(0, 0%, 70%);
+  --primary-color: hsl(36, 100%, 50%);
+  --secondary-color: hsl(0, 0%, 27%);
+  --border-radius: 8px;
+  --transition-speed: 0.4s;
+
+  /* Font Sizes */
+  --font-xs: 0.75rem;
+  --font-s: 0.875rem;
+  --font-m: 1rem;
+  --font-l: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-xxl: 1.625rem;
+  --font-xxxl: 3rem;
+}
+
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  all: unset;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition-speed),
+    transform var(--transition-speed);
+}
+
+.primary-button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+}
+
+.primary-button:hover {
+  background-color: var(--background-alt);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--secondary-color);
+  color: var(--text-color);
+}
+
+.secondary-button:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Shimmer Effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--grey-color);
+  border-radius: var(--border-radius);
+}
+
+.shimmer::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  top: 0;
+  left: -120px;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -120px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+  :root {
+    --font-xs: 0.688rem;
+    --font-s: 0.813rem;
+    --font-m: 0.938rem;
+    --font-l: 1.063rem;
+    --font-xl: 1.188rem;
+    --font-xxl: 1.5rem;
+    --font-xxxl: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-xs: 0.625rem;
+    --font-s: 0.75rem;
+    --font-m: 0.875rem;
+    --font-l: 1rem;
+    --font-xl: 1.125rem;
+    --font-xxl: 1.375rem;
+    --font-xxxl: 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-xs: 0.625rem;
+    --font-s: 0.688rem;
+    --font-m: 0.813rem;
+    --font-l: 0.938rem;
+    --font-xl: 1.063rem;
+    --font-xxl: 1.25rem;
+    --font-xxxl: 2rem;
+  }
+}
