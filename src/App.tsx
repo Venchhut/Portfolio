@@ -1,4 +1,5 @@
 import Contact from "./components/contact/Contact";
+import Experience from "./components/experience/Experience";
 import Header from "./components/header/Header";
 import HeroSection from "./components/home/HeroSection";
 import Projects from "./components/projects/Projects";
@@ -11,7 +12,7 @@ const App = () => {
       <HeroSection />
       <Skills />
       <Projects />
-      {/* <Experience /> */}
+      <Experience />
 
       <Contact />
     </div>

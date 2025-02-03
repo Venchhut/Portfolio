@@ -11,6 +11,7 @@ const Projects = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
+          className="projects__title"
         >
           <h1 className="section__title">All Projects</h1>
         </motion.div>
