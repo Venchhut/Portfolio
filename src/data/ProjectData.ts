@@ -49,7 +49,8 @@ const allProjects: ProjectType[] = [
     github: "example.com",
     live: "example.com",
     website: "example.com",
-    image: "path/image",
+    image:
+      "https://plus.unsplash.com/premium_photo-1720551256796-624029b9dc84?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "example.com",
   },
   {
@@ -69,7 +70,8 @@ const allProjects: ProjectType[] = [
     github: "example.com",
     live: "example.com",
     website: "example.com",
-    image: "path/image",
+    image:
+      "https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "example.com",
   },
   {
