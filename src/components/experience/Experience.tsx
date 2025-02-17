@@ -9,7 +9,7 @@ import { IconCode, IconSchool, IconStar } from "@tabler/icons-react";
 import "./experience.css";
 const Experience = () => {
   return (
-    <div className="experience-container">
+    <div className="experience-container" id="experiences">
       <motion.div
         className="experience-header"
         initial={{ opacity: 0 }}
@@ -19,7 +19,7 @@ const Experience = () => {
         <h2 className="section-title">Experiences</h2>
       </motion.div>
 
-      <VerticalTimeline>
+      <VerticalTimeline className="vertical-timeline-container">
         {experiences.map((exp) => (
           <VerticalTimelineElement
             key={exp.id}
