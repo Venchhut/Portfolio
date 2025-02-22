@@ -10,73 +10,104 @@ import {
 import profile from "../../assets/profile.jpg";
 
 const HeroSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <section className="home" id="home">
-      <div className="home-content">
+      <motion.div
+        className="home-content"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="left-content">
-          <motion.h1
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="title"
-          >
-            Hi there!
-          </motion.h1>
-          <motion.p>
-            I am a Junior React Developer with a strong focus on frontend
-            development. I specialize in building dynamic and responsive user
-            interfaces using modern technologies like React.js, TypeScript, and
-            various UI frameworks. My expertise includes working with state
-            management tools such as Redux and Context API, as well as
-            integrating RESTful APIs to create seamless web applications. I'm
-            passionate about writing clean, maintainable code and delivering
-            high-quality user experiences. I continuously strive to expand my
-            skill set and keep up with the latest industry trends and best
-            practices in frontend development.
-          </motion.p>
-          <div className="icons-link">
+          <motion.div className="text-content" variants={itemVariants}>
+            <h1 className="title">
+              Hi there! <span className="wave">👋</span>
+            </h1>
+            <h2 className="subtitle">I'm Venchhut</h2>
+            <div className="typing-text">Junior React Developer</div>
+            <p className="description">
+              I am a passionate frontend developer specializing in building
+              dynamic and responsive user interfaces using modern technologies
+              like React.js, TypeScript, and various UI frameworks. My expertise
+              includes:
+            </p>
+          </motion.div>
+
+          <motion.div className="social-links" variants={itemVariants}>
             <motion.a
-              href="mailto:venchhut@gamil.com"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              href="mailto:venchhut@gmail.com"
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <IconMail />
             </motion.a>
             <motion.a
               href="https://github.com/venchhut"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <IconBrandGithub />
             </motion.a>
             <motion.a
               href="https://gitlab.com/venchhut129"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <IconBrandGitlab />
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/venchhut/"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              className="social-icon"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <IconBrandLinkedin />
             </motion.a>
-          </div>
-          <button className="download-resume">
+          </motion.div>
+
+          <motion.button
+            className="download-resume"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <IconFileDownload size={20} />
-            <motion.a>Download Resume</motion.a>
-          </button>
+            <span>Download Resume</span>
+          </motion.button>
         </div>
-        <div className="right-content">
-          <img src={profile} alt="profile" />
-        </div>
-      </div>
+
+        <motion.div className="right-content" variants={itemVariants}>
+          <div className="image-wrapper">
+            <motion.img
+              src={profile}
+              alt="profile"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
