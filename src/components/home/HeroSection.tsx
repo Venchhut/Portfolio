@@ -39,10 +39,25 @@ const HeroSection = () => {
         <div className="left-content">
           <motion.div className="text-content" variants={itemVariants}>
             <h1 className="title">
-              Hi there! <span className="wave">👋</span>
+              Hi there!{" "}
+              <motion.span
+                className="wave"
+                animate={{
+                  rotate: [0, 14, -8, 14, -4, 10, 0, 0],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                }}
+              >
+                👋
+              </motion.span>
             </h1>
             <h2 className="subtitle">I'm Venchhut</h2>
-            <div className="typing-text">Junior React Developer</div>
+            <div className="text">
+              <div className="typing-text">Junior React Developer</div>
+            </div>
             <p className="description">
               I am a passionate frontend developer specializing in building
               dynamic and responsive user interfaces using modern technologies

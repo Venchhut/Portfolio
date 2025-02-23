@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./contact.css";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,13 +17,15 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here, such as sending it to an API or email.
     alert("Form submitted!");
   };
 
   return (
     <div className="contact-container" id="contact">
-      <h2 className="section-title">Contact Us</h2>
+      <h2 className="section-title">Get in Touch</h2>
+      <p className="contact-subtitle">
+        Feel free to drop a message. We’ll get back to you soon!
+      </p>
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Your Name</label>
@@ -32,7 +35,7 @@ const Contact = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Enter your name"
+            placeholder="John Doe"
             required
           />
         </div>
@@ -45,7 +48,7 @@ const Contact = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Enter your email"
+            placeholder="you@example.com"
             required
           />
         </div>
@@ -57,13 +60,13 @@ const Contact = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Write your message here"
+            placeholder="Write your message here..."
             required
           />
         </div>
 
         <button type="submit" className="submit-button">
-          Submit
+          Send Message
         </button>
       </form>
     </div>
