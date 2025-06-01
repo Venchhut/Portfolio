@@ -286,11 +286,12 @@
   }
 
   .title {
+    text-align: center;
     font-size: 2rem;
   }
 
   .subtitle {
-    font-size: 1.25rem;
+    display: none;
   }
 
   .typing-text {
